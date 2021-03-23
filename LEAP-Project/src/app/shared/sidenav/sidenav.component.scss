@@ -1,0 +1,104 @@
+@use '../../sass/variables' as v;
+
+.side-bar {
+    background: v.$primary;
+    position: fixed;
+    top: 80px;
+    width: auto;
+
+    height: 100%;
+}
+.side-bar .menu {
+    width: 100%;
+}
+
+.side-bar .menu .item {
+    position: relative;
+    cursor: pointer;
+}
+
+.side-bar .menu .item a {
+    color: v.$font-color;
+    font-size: 16px;
+    text-decoration: none;
+    display: block;
+    padding: 5px 30px;
+    line-height: 60px;
+}
+
+.side-bar .menu .item a:hover,
+.side-bar .menu .item a.active {
+    background: v.$primary;
+    color: v.$font-hover;
+    transition: 0.3s ease;
+    border-left: 5px solid v.$font-hover;
+    background: rgba(#b1b0b0, 0.1);
+}
+.side-bar .menu .item a.active {
+    border-bottom: none;
+}
+
+.side-bar .menu .item i {
+    margin-right: 15px;
+}
+
+.side-bar .menu .item a .dropdown {
+    position: absolute;
+    right: 0;
+    margin: 20px !important;
+    transition: 0.3s ease;
+}
+
+.side-bar .menu .item .sub-menu {
+    background: rgba(255, 255, 255, 0.1);
+    display: none;
+}
+.side-bar .menu .item.sub > .sub-menu {
+    display: block;
+}
+.side-bar .menu .item .sub-menu a {
+    padding-left: 60px;
+}
+
+.rotate {
+    transform: rotate(90deg);
+}
+
+.close-btn {
+    position: absolute;
+    color: #fff;
+    font-size: 20px;
+    right: 0;
+    margin: 25px;
+    cursor: pointer;
+}
+
+.menu-btn {
+    position: absolute;
+    color: #fff;
+    font-size: 20px;
+    margin: 25px;
+    cursor: pointer;
+}
+
+.main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.main h1 {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 60px;
+    text-align: center;
+    line-height: 80px;
+}
+
+@media (max-width: 900px) {
+    .main h1 {
+        font-size: 40px;
+        line-height: 60px;
+    }
+}

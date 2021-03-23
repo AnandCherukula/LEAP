@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;500;600;700&display=swap");
+section.contact-landing-page {
+    background: url(../../../assets/images/contact-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    min-height: 80vh;
+    margin: 0;
+    padding: 0;
+    max-height: auto;
+    font-family: "Open Sans", sans-serif !important;
+    position: relative;
+    z-index: -1;
+}
+
+.contact-landing-page-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.71);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contact-banner-text {
+    width: 100%;
+    font-size: 60px;
+    line-height: 70px;
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #fff;
+}
+
+section.contact-landing-page p {
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    line-height: 35px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+div.contact-heading {
+    width: 100%;
+    margin: 140px 0;
+    z-index: -1;
+}
+
+div.contact-heading.first {
+    margin: 70px 0;
+    z-index: -1;
+}
+
+div.contact-heading h2 {
+    color: #000;
+    text-align: center;
+    font-size: 30px;
+    line-height: 45px;
+    font-weight: 700;
+    margin-top: 0;
+    z-index: 1;
+}
+div.contact-heading-h2 {
+    z-index: -1;
+}
+
+div.contact-heading h2 span {
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: 300;
+}
+
+div.contact-heading p {
+    font-size: 18px;
+    line-height: 30px;
+    color: #000;
+    text-align: center;
+    font-weight: 400;
+    margin: 30px 0;
+}
+
+#contact-cards {
+    width: 100%;
+    font-size: 24px;
+    line-height: 35px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+div.row.contact-cards {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+div.row.contact-cards .col-md-7 {
+    background-color: #f3f3f3;
+    height: 325px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+div.row.contact-cards .col-md-5.second {
+    background-color: transparent;
+}
+
+div.row.contact-cards .col-md-3 .contact-card-h2 {
+    color: #000;
+    text-align: start;
+    font-size: 24px;
+    line-height: 35px;
+    font-weight: 700;
+    margin-top: 0;
+}
+
+div.row.contact-cards .col-md-3 label {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+div.row.contact-cards .col-md-5 div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+div.row.contact-cards .col-md-5 div button.contact-button {
+    width: 60%;
+    background: #ffcb05;
+    border: 1px solid transparent;
+    color: #000 !important;
+    border-radius: 4px;
+
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+    display: inline-block;
+    margin: 18px auto;
+    text-align: center;
+    white-space: inherit;
+    outline: none;
+}
+
+div.row.contact-cards .col-md-5 div button.contact-button:hover {
+    background-color: #efc003fb;
+}
+
+div.row.contact-cards .col-md-5 div button.contact-button.color-change {
+    background-color: #4e0e77;
+    color: #fff !important;
+}
+
+div.row.contact-cards .col-md-5 div button.contact-button.color-change:hover {
+    background-color: #ffcb05;
+    color: #000 !important;
+}
+
+.contact-row-card-third {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+div.card {
+    width: 100%;
+
+    position: relative;
+    transition-duration: 0.3s;
+    color: #000 !important;
+    background: #fff;
+    box-shadow: 0 2px 14px 0 rgb(0 0 0 / 12%);
+    border-radius: 4px;
+    border: none;
+}
+
+div.card.contact-row-card-third .card-body {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+}
+
+div.card.contact-row-card-third .card-body h5 {
+    font-size: 24px;
+    margin: 4px 0;
+    line-height: 30px;
+    font-weight: 700;
+    color: #000;
+    font-family: "Open Sans", sans-serif !important;
+}
+
+div.card.contact-row-card-third .card-body p.card-text {
+    margin: 30px 0;
+    margin-top: 0;
+    color: #000;
+    font-weight: 400;
+    font-family: "Open Sans", sans-serif !important;
+}
+
+div.card.contact-row-card-third .card-body a.card-link {
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #ffcb05;
+    font-size: 18px;
+    line-height: 30px;
+    color: #000;
+}

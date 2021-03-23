@@ -1,0 +1,284 @@
+@use '../../sass/variables' as v;
+@import "../../sass/buttons.scss";
+
+@mixin flex-code($justify-content) {
+    display: flex;
+    align-items: center;
+    justify-content: $justify-content;
+}
+
+// header starts
+
+header {
+    width: 100%;
+    background: v.$primary;
+    padding: 0 10px;
+    height: 80px;
+    z-index: 10;
+    color: v.$font-color;
+    @include flex-code(space-between);
+    padding-right: 50px;
+    div.logo {
+        width: 100px;
+        margin-right: 40px;
+        cursor: pointer;
+        img {
+            width: 100%;
+        }
+    }
+    nav {
+        height: 100%;
+        ul {
+            @include flex-code(space-between);
+            padding: 0;
+            height: 100%;
+
+            li {
+                list-style: none;
+                margin-right: 5px;
+                height: 100%;
+                padding: 10px;
+                cursor: pointer;
+                border-radius: 10px;
+                @include flex-code(space-between);
+                position: relative;
+                a {
+                    text-decoration: none;
+                    text-align: center;
+                    width: max-content;
+                    height: 100%;
+                    padding: 0 5px;
+                    @include flex-code(space-between);
+                    color: v.$font-color !important;
+                    line-height: 20px;
+                    text-transform: uppercase;
+                    outline: none;
+                    font: 400 14px/20px Roboto, "Helvetica Neue", sans-serif;
+                    letter-spacing: normal;
+                    color: v.$font-color;
+                    font-size: 16px;
+                    text-decoration: none;
+
+                    line-height: 60px;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        bottom: 10px;
+                        left: 0;
+                        width: 100%;
+                        height: 5px;
+                        background-color: v.$font-hover;
+                        transform: skewX(80deg) scaleX(0);
+                        transition: 0.4s ease-in-out;
+                    }
+                    &:hover,
+                    &.active {
+                        color: v.$font-hover !important;
+                    }
+                    &:hover::before,
+                    &.active::before {
+                        transform: skewX(-60deg) scaleX(1);
+                    }
+                }
+
+                div.header-dropdown {
+                    position: absolute;
+                    top: 100%;
+                    z-index: 15;
+                    width: 500%;
+                    display: none;
+                    align-items: flex-start;
+                    justify-content: space-around;
+                    background: v.$primary;
+                    border: 1px solid #bbb;
+
+                    .inner-header-dropdown ul {
+                        display: block;
+                    }
+                }
+                &:hover > div.header-dropdown {
+                    display: flex;
+                }
+                // :hover {
+                //     display: block;
+                // }
+            }
+        }
+    }
+    div.userDetails {
+        @include flex-code(space-between);
+        margin-left: 40px;
+        i.fas.fa-search {
+            font-size: 20px;
+            margin-right: 10px;
+            color: v.$font-color;
+            cursor: pointer;
+        }
+        .circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+
+            cursor: pointer;
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+// Search Icon
+.content {
+    background: transparent;
+    width: 250px;
+    display: flex;
+    justify-content: flex-end;
+}
+.search {
+    --size: 60px;
+    border: 2px solid var(--clr-primary);
+    display: flex;
+    border-radius: 100px;
+    overflow: hidden;
+    font-size: 1.25em;
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    // margin-left: auto;
+    transition: width 450ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    padding: 3px;
+}
+
+.search__input {
+    border: 0;
+    padding: 0 1.25em;
+    flex-grow: 1;
+    outline: 0;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: transparent;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.search__submit {
+    font-size: 1.5rem;
+    margin-left: auto;
+    background: 0;
+    border: 0;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 200ms ease-out;
+    width: calc(var(--size) - 10px);
+    height: calc(var(--size) - 10px);
+}
+.search__submit i {
+    color: v.$font-hover;
+}
+
+.search:focus-within {
+    width: 100%;
+
+    .search__input {
+        opacity: 1;
+        z-index: initial;
+        height: 45px !important;
+        cursor: initial;
+        width: calc(100% - var(--size));
+        border-bottom: 1px solid v.$font-hover;
+    }
+
+    .search__submit {
+        transition: transform 500ms ease-out;
+
+        &:hover,
+        &:focus {
+            outline: 0;
+            transform: rotate(1turn);
+        }
+    }
+}
+.search__submit i.fas {
+    color: v.$font-hover;
+}
+
+// header Ends
+
+@media only screen and (max-width: 1080px) {
+    header {
+        width: 100%;
+        nav ul li {
+            padding: 2px;
+            a {
+                font-size: 15px;
+                width: max-content;
+            }
+        }
+    }
+    .content {
+        width: 150px;
+    }
+    .search__input {
+        padding: 0 2px;
+        font-size: 12px;
+        height: 30px !important;
+
+        margin: auto;
+    }
+    .search:focus-within {
+        .search__input {
+            opacity: 1;
+            z-index: initial;
+            height: 30px !important;
+            cursor: initial;
+            width: calc(100% - var(--size));
+            border-bottom: 1px solid v.$font-hover;
+        }
+    }
+}
+
+/* #### Mobile Phones Portrait #### */
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+    /* some CSS here */
+}
+
+/* #### Mobile Phones Landscape #### */
+@media screen and (max-device-width: 640px) and (orientation: landscape) {
+    /* some CSS here */
+}
+
+/* #### Mobile Phones Portrait or Landscape #### */
+@media screen and (max-device-width: 640px) {
+    /* some CSS here */
+}
+
+/* #### iPhone 4+ Portrait or Landscape #### */
+@media screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+    /* some CSS here */
+}
+
+/* #### iPhone 5 Portrait or Landscape #### */
+@media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+    /* some CSS here */
+}
+
+/* #### iPhone 6 and 6 plus Portrait or Landscape #### */
+@media (min-device-height: 667px) and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3) {
+    /* some CSS here */
+}
+
+/* #### Tablets Portrait or Landscape #### */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    /* some CSS here */
+}
+
+/* #### Desktops #### */
+@media screen and (min-width: 1024px) {
+    /* some CSS here */
+}

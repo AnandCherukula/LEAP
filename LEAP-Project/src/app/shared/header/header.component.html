@@ -1,0 +1,78 @@
+<header>
+    <div class="logo">
+        <img src="../../../assets/Group_950.png" alt="" srcset="">
+    </div>
+    <nav>
+        <ul>
+            <li><a routerLink="/home" routerLinkActive='active'>Home</a></li>
+            <li><a routerLink="/whyLeap" routerLinkActive='active'>Why-Leap?</a></li>
+            <li><a routerLink="/solutions" routerLinkActive='active'>Solutions</a>
+                <div class="header-dropdown">
+                    <div class="inner-header-dropdown service">
+                        <h2>Services</h2>
+                        <ul>
+                            <li>
+                                <a>Analytics</a>
+                            </li>
+                            <li>
+                                <a>Analytics</a>
+                            </li>
+                            <li>
+                                <a>Analytics</a>
+                            </li>
+                            <li>
+                                <a>Analytics</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="inner-header-dropdown industries">
+                        <h2>industries</h2>
+                        <ul>
+                            <li>
+                                <a>Analytics</a>
+                            </li>
+                            <li>
+                                <a>Analytics</a>
+                            </li>
+                            <li>
+                                <a>Analytics</a>
+                            </li>
+                            <li>
+                                <a>Analytics</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li><a routerLink="/viewDemo" routerLinkActive='active'>Request Demo</a></li>
+            <li><a routerLink="/contact" routerLinkActive='active'>Contact US</a></li>
+
+        </ul>
+    </nav>
+    <div class="userDetails">
+        <!-- <i class="fas fa-search"></i> -->
+        <div class="content">
+            <div class="search">
+                <input type="text" class="search__input" aria-label="search" placeholder="Enter Your Search" matInput
+                    [formControl]="searchControl" [matAutocomplete]="auto">
+                <button class="search__submit" aria-label="submit search"><i class="fas fa-search"></i></button>
+            </div>
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                    {{option}}
+                </mat-option>
+            </mat-autocomplete>
+        </div>
+
+        <a routerLink="/login" routerLinkActive='active' class="btn btn-custom">Login</a>
+
+        <!-- <div class="circle">
+            <img mat-ripple class="profile-image" [matMenuTriggerFor]="userDropdown"
+                src="../../../assets/dashboard/user.jpeg" alt="userLogo" srcset="">
+            <mat-menu #userDropdown="matMenu">
+                <button mat-menu-item>Profile</button>
+                <button mat-menu-item (click)="logoutUser()">Logout</button>
+            </mat-menu>
+        </div> -->
+    </div>
+</header>

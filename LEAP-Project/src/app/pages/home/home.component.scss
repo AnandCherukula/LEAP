@@ -1,0 +1,108 @@
+@use '../../sass/variables' as v;
+
+@import "../../sass/buttons.scss";
+@import "../../sass/constants.scss";
+@import "../../sass/mixins";
+
+section {
+    width: 100%;
+
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#home-video {
+    margin-top: calc(100% - 98%);
+    justify-content: center;
+    .leap-video {
+        width: 80%;
+        div.video {
+            background: black;
+            video {
+                width: 100%;
+                height: auto;
+                cursor: pointer;
+            }
+        }
+        .video-content {
+            width: 95%;
+            height: 100%;
+            padding-left: 50px;
+            box-sizing: border-box;
+
+            .video-text {
+                height: 80%;
+                font: 400 14px/20px Roboto, "Helvetica Neue", sans-serif;
+                letter-spacing: normal;
+                line-height: 25px;
+
+                h1 {
+                    font-size: 20px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: 4px;
+                }
+                p.video-para {
+                    font-size: 16px;
+                    letter-spacing: 1px;
+                }
+            }
+            .video-buttons {
+                height: 15%;
+                a {
+                    font-size: 16px;
+                    letter-spacing: 1px;
+                    color: inherit;
+                    text-decoration: none;
+                    cursor: pointer;
+                    font-weight: 700;
+                    position: relative;
+                    &::before {
+                        content: "";
+                        width: 0;
+                        height: 3px;
+                        background: v.$font-hover;
+                        position: absolute;
+                        left: 0;
+                        bottom: -5px;
+                        transition: width 0.3s ease-out;
+                        border-radius: 0 1px 1px 0;
+                    }
+                    &:hover::before {
+                        width: 90%;
+                    }
+                    i.fas {
+                        transition: margin-left 0.3s ease-out 0.3s;
+                        color: v.$font-hover;
+                    }
+                    &:hover i.fas {
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#home-solutions {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 80vh;
+    background-image: radial-gradient(
+        circle,
+        #ffffff,
+        #f8f8f8,
+        #f0f0f0,
+        #e9e9e9,
+        #e2e2e2,
+        #e2e2e2,
+        #e2e2e2,
+        #e2e2e2,
+        #e9e9e9,
+        #f0f0f0,
+        #f8f8f8,
+        #ffffff
+    );
+}

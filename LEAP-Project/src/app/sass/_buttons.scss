@@ -1,0 +1,13 @@
+@use './variables' as v;
+
+.btn-custom,
+.btn-custom-outline:hover {
+    background: v.$font-hover;
+    color: white;
+}
+.btn-custom:hover,
+.btn-custom-outline {
+    border: 1px solid v.$font-hover;
+    background: transparent;
+    color: v.$font-hover;
+}
