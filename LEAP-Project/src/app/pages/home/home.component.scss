@@ -1,18 +1,34 @@
 @use '../../sass/variables' as v;
 
-@import "../../sass/buttons.scss";
-@import "../../sass/constants.scss";
+@import "../../sass/buttons";
+@import "../../sass/constants";
 @import "../../sass/mixins";
 
 section {
-    width: 100%;
-
     display: flex;
     margin-bottom: 20px;
 }
-
+.custome-carousel {
+    height: 70vh;
+    .carousel-inner {
+        height: 100%;
+        .carousel-item {
+            z-index: 1;
+        }
+        div {
+            height: 100%;
+            img {
+                height: 100%;
+            }
+        }
+    }
+    button {
+        background: transparent;
+        border: none;
+    }
+}
 #home-video {
-    margin-top: calc(100% - 98%);
+    margin-top: calc(100% - 90%);
     justify-content: center;
     .leap-video {
         width: 80%;
@@ -84,25 +100,162 @@ section {
     }
 }
 
-#home-solutions {
+.product-section {
     width: 100%;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    min-height: 80vh;
-    background-image: radial-gradient(
-        circle,
-        #ffffff,
-        #f8f8f8,
-        #f0f0f0,
-        #e9e9e9,
-        #e2e2e2,
-        #e2e2e2,
-        #e2e2e2,
-        #e2e2e2,
-        #e9e9e9,
-        #f0f0f0,
-        #f8f8f8,
-        #ffffff
-    );
+    margin: 8% 0;
+
+    .product-heading {
+        width: 100%;
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 4%;
+        .product-heading-text {
+            font-size: 40px;
+            font-weight: 900;
+
+            letter-spacing: 5px;
+        }
+    }
+}
+
+.product-section {
+    width: 100%;
+
+    background-color: v.$primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.product-section .product-row {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.product-section .product-row .product-card3 {
+    width: 300px;
+    height: 400px;
+
+    background: v.$primary;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.5s ease-in-out;
+    margin-bottom: 40px;
+    background: transparent;
+    box-shadow: 0 2px 3px 2px rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid v.$font-hover;
+    animation: cardAnimation 0.5s 1 0s ease-in-out;
+}
+
+.product-section .product-row .product-card3:hover {
+    transform: translateY(20px);
+}
+
+.product-section .product-row .product-card3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(28, 51, 53, 0.805), rgba(37, 39, 39, 0.673));
+    z-index: 2;
+    opacity: 0;
+}
+
+.product-section .product-row .product-card3:hover::before {
+    opacity: 1;
+}
+
+.product-section .product-row .product-card3 img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0%;
+    object-fit: cover;
+}
+
+.product-section .product-row .product-card3 .info {
+    position: relative;
+    z-index: 3;
+    color: v.$primary;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.5s all;
+}
+
+.product-section .product-row .product-card3:hover .info {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.product-section .product-row .product-card3 .info h2.product-h2 {
+    margin: 0;
+    color: v.$font-hover;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.product-section .product-row .product-card3 .info p {
+    margin: 20px 0 15px 0;
+    font-size: 15;
+    color: v.$primary;
+}
+
+.product-section .product-row .product-card3 .info .btn:last-child {
+    float: right;
+}
+
+@keyframes cardAnimation {
+    0% {
+        transform: scale(0.1);
+    }
+    25% {
+        transform: scale(0.25);
+    }
+    50% {
+        transform: scale(0.5);
+    }
+    75% {
+        transform: scale(0.75);
+    }
+    100% {
+        transform: rotate(xx) scale(0.1);
+    }
+}
+
+.my-pagination :ng-deep .ngx-pagination {
+    margin-left: 0;
+    margin-bottom: 1rem;
+    background: transparent;
+    box-shadow: 0 2px 3px 2px rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid C;
+    border-radius: 5px;
+    padding-right: 30px;
+}
+
+.my-pagination :ng-deep .ngx-pagination {
+    color: v.$primary;
+}
+
+.my-pagination :ng-deep .ngx-pagination li a:hover {
+    background: v.$font-hover;
+    color: v.$font-color;
+}
+
+.my-pagination :ng-deep .ngx-pagination .current {
+    background: v.$font-hover;
+    color: v.$font-color;
+}
+
+.my-pagination :ng-deep .ngx-pagination .disabled {
+    color: rgb(85, 78, 78);
 }

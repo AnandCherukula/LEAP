@@ -91,9 +91,39 @@ header {
                     justify-content: space-around;
                     background: v.$primary;
                     border: 1px solid #bbb;
+                    padding: 15% 0;
+                    .inner-header-dropdown {
+                        width: 50%;
+                        box-sizing: border-box;
+                        padding: 25px auto;
+                        h2 {
+                            font: 700 20px/32px Roboto, "Helvetica Neue", sans-serif;
+                            letter-spacing: normal;
+                            margin: 0 0 16px;
+                            text-align: center;
+                            letter-spacing: 2px;
+                            text-transform: uppercase;
+                            i.fas {
+                                margin-right: 10px;
+                            }
+                        }
+                        ul {
+                            display: block;
+                            width: 100%;
+                            border-right: 1px solid #bbb;
+                            display: flex;
+                            flex-direction: column;
 
-                    .inner-header-dropdown ul {
-                        display: block;
+                            li {
+                                width: auto;
+                                height: 50px;
+                                text-align: left;
+                                a {
+                                    letter-spacing: 0.5px;
+                                    justify-content: center;
+                                }
+                            }
+                        }
                     }
                 }
                 &:hover > div.header-dropdown {

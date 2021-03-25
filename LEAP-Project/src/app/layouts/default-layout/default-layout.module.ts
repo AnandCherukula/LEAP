@@ -12,6 +12,10 @@ import { SolutionsComponent } from 'src/app/pages/solutions/solutions.component'
 import { MatSliderModule } from '@angular/material/slider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,6 +34,10 @@ import { MatIconModule } from '@angular/material/icon';
     MatSliderModule,
     MatButtonModule,
     MatIconModule,
+    IvyCarouselModule,
+    NgxPaginationModule,
+    MatInputModule,
+    ReactiveFormsModule,
   ],
 })
 export class DefaultLayoutModule {}

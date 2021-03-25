@@ -1,0 +1,72 @@
+@use '../../sass/variables' as v;
+
+.why-leap {
+    min-height: calc(70vh - 80px);
+    h2.our-team-heading {
+        font-size: 40px;
+        font-weight: 900;
+        margin: 4% 0px;
+        letter-spacing: 5px;
+    }
+}
+
+.row.our-team-cards {
+    display: flex;
+    justify-content: center;
+}
+.column {
+    float: left;
+    width: 30.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(v.$font-color, 0.2);
+    margin: 8px;
+}
+
+.about-section {
+    padding: 50px;
+    text-align: center;
+    background-color: v.$footer-bg;
+    color: v.$primary;
+}
+
+.container {
+    padding: 0 16px;
+}
+
+.container::after,
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.title {
+    color: grey;
+}
+
+.button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: v.$primary;
+    background-color: v.$font-color;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: v.$footer-bg;
+}
+
+@media screen and (max-width: 650px) {
+    .column {
+        width: 100%;
+        display: block;
+    }
+}
